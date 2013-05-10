@@ -1,8 +1,10 @@
 #!/bin/bash
 
+[[ "$2" == "message" ]] && [[ -z "$(cat $1)" ]] && exit 1
+
 BRANCH_NAME=$(git symbolic-ref HEAD 2> /dev/null | cut -b 12-)
 if [[ -n "$BRANCH_NAME" ]] && [[ "$BRANCH_NAME" =~ ^feature\/ ]] ; then
   BRANCH_NAME=${BRANCH_NAME/feature\/}
   BRANCH_NAME=${BRANCH_NAME//[-_]/ }
-  printf "${BRANCH_NAME[@]^}:\n$(cat $1)" > $1
+  printf "${BRANCH_NAME[@]^}: $(cat $1)" > $1
 fi
