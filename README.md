@@ -24,3 +24,11 @@ git init --template ~/gitils/template
 The hook automatically prepen the commit message with the name of the feature
 branch. A feature branch is identified according the the format `feature/<name>`.
 Dashes and underscores are replaced by space.
+
+## Externals
+
+### Prompt
+
+The project [bash-git-prompt](https://github.com/magicmonty/bash-git-prompt)
+will give you a great informative prompt in Bash (current repository and branch,
+number of files staged or changed, etc.).
