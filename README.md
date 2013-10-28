@@ -2,6 +2,13 @@
 
 Install it in directory gitils in your home directory.
 
+## Aliases
+
+Run to install the alias
+```Bash
+aliases.sh
+```
+
 ## Hooks
 
 ### Setup
