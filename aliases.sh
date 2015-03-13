@@ -13,3 +13,11 @@ git config --global alias.sync-master-with-upstream '!f() {
   git fetch upstream && git rebase upstream/$HEAD_NAME
 }
 f'
+
+git config --global alias.merge-dry '!f() {
+  BASE_SHA=`git merge-base HEAD $1`
+  OUTPUT=`mktemp --suffix=.patch`
+  git merge-tree $BASE_SHA $1 HEAD > $OUTPUT
+  subl $OUTPUT
+}
+f'
