@@ -21,3 +21,16 @@ git config --global alias.merge-dry '!f() {
   subl $OUTPUT
 }
 f'
+
+git config --global alias.prune-branches '!f() {
+  UPSTREAM=$1
+  test -z "$UPSTREAM" && echo "Please provide an upstream." && exit 1
+  BRANCHES_TO_REMOVE=`git remote prune $UPSTREAM | sed "1,2d" | sed "s/ \* \[pruned\] $UPSTREAM\///"`
+  test -z "$BRANCHES_TO_REMOVE" && echo "No branch to prune." && exit 1
+  test -z "$BRANCHES_TO_REMOVE" || git branch -d $BRANCHES_TO_REMOVE | sed "s/Deleted/Pruned and deleted/"
+}
+f'
+
+git config --global alias.s "status -s"
+
+git config --global alias.lg "log --oneline --decorate --all --graph"
