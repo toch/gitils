@@ -34,3 +34,15 @@ f'
 git config --global alias.s "status -s"
 
 git config --global alias.lg "log --oneline --decorate --all --graph"
+
+git config --global alias.health '!f() {
+  echo -n "$(basename $(pwd)) is ... fsck("
+  BROKEN=0
+  (git fsck > /dev/null 2>&1 && echo -n "OK)") || (echo -n "KO)" && BROKEN=1)
+  TMP_DIR=$(mktemp -d)
+  echo -n " clone("
+  (git clone -q . "${TMP_DIR}" > /dev/null 2>&1 && echo "OK)") || (echo "KO)" && BROKEN=1)
+  rm -R "${TMP_DIR}"
+  exit $BROKEN
+}
+f'
