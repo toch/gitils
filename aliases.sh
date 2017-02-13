@@ -46,3 +46,5 @@ git config --global alias.health '!f() {
   exit $BROKEN
 }
 f'
+
+git config --global alias.cd "checkout"
