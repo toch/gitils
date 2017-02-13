@@ -48,3 +48,5 @@ git config --global alias.health '!f() {
 f'
 
 git config --global alias.cd "checkout"
+
+git config --global alias.new "checkout -b"
