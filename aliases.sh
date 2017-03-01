@@ -52,3 +52,5 @@ git config --global alias.cd "checkout"
 git config --global alias.new "checkout -b"
 
 git config --global alias.force 'push --force-with-lease'
+
+git config --global alias.amend 'commit --amend --no-edit'
