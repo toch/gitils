@@ -5,8 +5,9 @@ Install it in directory gitils in your home directory.
 ## Aliases
 
 Run to install the alias
-```Bash
-aliases.sh
+```bash
+chmod +x aliases.sh
+./aliases.sh
 ```
 
 ## Hooks
