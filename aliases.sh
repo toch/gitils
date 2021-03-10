@@ -61,3 +61,4 @@ git config --global alias.select "add -i"
 
 git config --global alias.root 'rev-parse --show-toplevel'
 
+git config --global alias.conflicts 'diff --name-only --diff-filter=U'
