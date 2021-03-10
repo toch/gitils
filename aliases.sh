@@ -58,3 +58,6 @@ git config --global alias.amend 'commit --amend --no-edit'
 git config --global alias.boot '!git init && git commit -m "root" --allow-empty'
 
 git config --global alias.select "add -i"
+
+git config --global alias.root 'rev-parse --show-toplevel'
+
